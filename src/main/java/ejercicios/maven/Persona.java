@@ -1,7 +1,10 @@
 package ejercicios.maven;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
+import java.util.List;
 import java.util.Objects;
 
 public class Persona {
@@ -20,6 +23,12 @@ public class Persona {
         Gson gson = new Gson();
         Persona persona = gson.fromJson(json, Persona.class);
         return persona;
+    }
+
+    public static List<Persona> fromJsonList(String json) {
+        Gson gson = new Gson();
+        Type listType = new TypeToken<List<Persona>>() {}.getType();
+        return gson.fromJson(json, listType);
     }
 
     public String getNombre() {
