@@ -9,5 +9,6 @@ public class Main {
         String json = "{\"nombre\":\"Ana\",\"edad\":25}";
 
         Persona persona = Persona.fromJson(json);
+        System.out.println(persona);
     }
 }

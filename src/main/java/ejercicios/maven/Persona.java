@@ -19,7 +19,6 @@ public class Persona {
     public static Persona fromJson(String json) {
         Gson gson = new Gson();
         Persona persona = gson.fromJson(json, Persona.class);
-        System.out.println(persona);
         return persona;
     }
 
